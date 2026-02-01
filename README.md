@@ -30,6 +30,9 @@ The system implements a three-tier data lake architecture to maintain data integ
 * **Data Processing**: Multi-threaded ThreadPoolExecutor for parallel API enrichment.
 * **Visualization**: Streamlit for real-time geospatial mapping and risk dashboarding.
 * **Development Environment**: PyCharm with integrated Git version control.
+> [PyCharm Git Configuration]
+> <img width="1502" height="981" alt="Screenshot 2026-01-31 at 23 35 30" src="https://github.com/user-attachments/assets/a50a7b3d-b225-47f8-8dfd-9ac0ed26bd66" />
+
 
 ### Data Engineering and Performance Optimization
 A significant engineering challenge involved managing high-latency external API calls without stalling the pipeline. With the assistance of AI agents to optimize the logic, I implemented a **ThreadPoolExecutor** to parallelize requests. This allows the system to handle multiple wait states simultaneously, ensuring pipeline stability during network timeouts or rate-limiting events. The system successfully managed and enriched data for a diverse global fleet in a single audit cycle.
