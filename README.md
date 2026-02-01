@@ -16,10 +16,13 @@ The system implements a three-tier data lake architecture to maintain data integ
 
 * **Bronze Layer (Ingestion)**: Captures raw IoT telemetry from message brokers and stores it as immutable data in S3-compatible object storage.
 * **Silver Layer (Enrichment)**: A parallelized refinery that performs reverse geocoding and weather API integration. This layer transforms raw coordinates into validated location names and environmental context.
-> ![MinIO Silver Layer Storage](Screenshot%202026-01-31%20at%2023.23.08.jpg)
+> [MinIO Silver Layer Storage]
+> <img width="1502" height="830" alt="Screenshot 2026-01-31 at 23 23 08" src="https://github.com/user-attachments/assets/31ca4655-dafd-4534-9acc-82f5814ef48c" />
 
 * **Gold Layer (Actionable Intelligence)**: A specialized control tower that surfaces high-risk alerts and provides precision tracking for stakeholders via a real-time dashboard.
-> ![Supply Chain Control Tower Dashboard](Screenshot%202026-01-31%20at%2023.26.47.png)
+> [Supply Chain Control Tower Dashboard]
+> <img width="2552" height="1183" alt="image" src="https://github.com/user-attachments/assets/7c31767e-9db1-4266-81eb-01ef84fbf956" />
+
 
 ### Tech Stack
 * **Languages**: Python (Pandas, Requests, Geopy).
@@ -27,7 +30,6 @@ The system implements a three-tier data lake architecture to maintain data integ
 * **Data Processing**: Multi-threaded ThreadPoolExecutor for parallel API enrichment.
 * **Visualization**: Streamlit for real-time geospatial mapping and risk dashboarding.
 * **Development Environment**: PyCharm with integrated Git version control.
-> ![PyCharm Git Configuration](image_5bc9c7.jpg)
 
 ### Data Engineering and Performance Optimization
 A significant engineering challenge involved managing high-latency external API calls without stalling the pipeline. With the assistance of AI agents to optimize the logic, I implemented a **ThreadPoolExecutor** to parallelize requests. This allows the system to handle multiple wait states simultaneously, ensuring pipeline stability during network timeouts or rate-limiting events. The system successfully managed and enriched data for a diverse global fleet in a single audit cycle.
